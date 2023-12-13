@@ -1,7 +1,6 @@
 package day1
 
 import (
-	"fmt"
 	"strconv"
 	"strings"
 )
@@ -11,36 +10,28 @@ func isDigit(char rune) bool {
 	return ascii < 58 && ascii > 47
 }
 
-func getFirstDigit(s string) int {
+func getFirstDigit(s string) (int, int) {
 	for i := 0; i < len(s); i++ {
 		char := rune(s[i])
 		if isDigit(char) {
 			val, _ := strconv.Atoi(string(char))
-			return val
+			return i, val
 		}
 	}
 
-	return 0
+	return -1, 0
 }
 
-func getLastDigit(s string) int {
+func getLastDigit(s string) (int, int) {
 	for i := len(s) - 1; i >= 0; i-- {
 		char := rune(s[i])
 		if isDigit(char) {
 			val, _ := strconv.Atoi(string(char))
-			return val
+			return i, val
 		}
 	}
 
-	return 0
-}
-
-func getTwoDigits(s string) int {
-	first := getFirstDigit(s)
-	second := getLastDigit(s)
-
-	val, _ := strconv.Atoi(fmt.Sprintf("%c%c", first, second))
-	return val
+	return -1, 0
 }
 
 func PartA(data string) int {
@@ -49,7 +40,9 @@ func PartA(data string) int {
 	total := 0
 
 	for _, line := range lines {
-		total += getTwoDigits(line)
+		_, first := getFirstDigit(line)
+		_, second := getLastDigit(line)
+		total += ((first * 10) + second)
 	}
 
 	return total
