@@ -15,18 +15,20 @@ func getTwoDigits(s string) int {
 	var first rune
 	var second rune
 
-	for _, char := range s {
+	for i := 0; i < len(s); i++ {
+		char := rune(s[i])
 		if isDigit(char) {
-			if first != 0 {
-				second = char
-			} else {
-				first = char
-			}
+			first = char
+			break
 		}
 	}
 
-	if second == 0 {
-		second = first
+	for i := len(s) - 1; i >= 0; i-- {
+		char := rune(s[i])
+		if isDigit(char) {
+			second = char
+			break
+		}
 	}
 
 	val, _ := strconv.Atoi(fmt.Sprintf("%c%c", first, second))
