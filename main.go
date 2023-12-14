@@ -6,6 +6,7 @@ import (
 	"os"
 
 	"github.com/abdul-rehman-d/advent-of-code-2023/day1"
+	"github.com/abdul-rehman-d/advent-of-code-2023/day2"
 )
 
 func getChallengeInput(i int) string {
@@ -18,8 +19,8 @@ func getChallengeInput(i int) string {
 
 func main() {
 
-	partA := []func(string) int{day1.PartA}
-	partB := []func(string) int{day1.PartB}
+	partA := []func(string) int{day1.PartA, day2.PartA}
+	partB := []func(string) int{day1.PartB, day2.PartB}
 
 	fmt.Print("Enter the day you want to run: ")
 
