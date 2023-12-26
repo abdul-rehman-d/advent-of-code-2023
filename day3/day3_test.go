@@ -5,16 +5,24 @@ import (
 )
 
 func TestPartA(t *testing.T) {
-	data := ""
+	data := `467..114..
+...*......
+..35..633.
+......#...
+617*......
+.....+.58.
+..592.....
+......755.
+...$.*....
+.664.598..`
 
-	expected := 0
+	expected := 4361
 	result := PartA(data)
 
 	if expected != result {
 		t.Fatalf("\nExpected = %d\nResult = %d\n", expected, result)
 	}
 }
-
 
 func TestPartB(t *testing.T) {
 	data := ""
