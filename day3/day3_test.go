@@ -25,9 +25,18 @@ func TestPartA(t *testing.T) {
 }
 
 func TestPartB(t *testing.T) {
-	data := ""
+	data := `467..114..
+...*......
+..35..633.
+......#...
+617*......
+.....+.58.
+..592.....
+......755.
+...$.*....
+.664.598..`
 
-	expected := 0
+	expected := 467835
 	result := PartB(data)
 
 	if expected != result {
