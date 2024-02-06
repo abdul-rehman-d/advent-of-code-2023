@@ -10,6 +10,7 @@ import (
 	"github.com/abdul-rehman-d/advent-of-code-2023/day2"
 	"github.com/abdul-rehman-d/advent-of-code-2023/day3"
 	"github.com/abdul-rehman-d/advent-of-code-2023/day4"
+	"github.com/abdul-rehman-d/advent-of-code-2023/day5"
 )
 
 func getChallengeInput(i int) string {
@@ -112,8 +113,8 @@ func generate(day int) error {
 
 func solve(day int) {
 
-	partA := []func(string) int{day1.PartA, day2.PartA, day3.PartA, day4.PartA}
-	partB := []func(string) int{day1.PartB, day2.PartB, day3.PartB, day4.PartB}
+	partA := []func(string) int{day1.PartA, day2.PartA, day3.PartA, day4.PartA, day5.PartA}
+	partB := []func(string) int{day1.PartB, day2.PartB, day3.PartB, day4.PartB, day5.PartB}
 
 	if day > len(partA) {
 		log.Fatalf("Day cannot be more than %d\n", len(partA))
